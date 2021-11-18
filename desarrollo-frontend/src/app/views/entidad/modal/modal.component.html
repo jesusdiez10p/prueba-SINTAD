@@ -1,0 +1,45 @@
+<mat-form-field appearance="fill">
+    <mat-label *ngIf="entidad.documento">ID Doc. {{entidad.documento.id}}</mat-label>
+    <mat-select matInput [(ngModel)]="entidad.documento">
+        <mat-option *ngFor="let d of documento" [value]="d">
+            {{d.id}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Nro. Doc.</mat-label>
+    <input matInput placeholder="Nro Documento" [(ngModel)]="entidad.nroDocumento">
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Razon Social</mat-label>
+    <input matInput placeholder="Razon Social" [(ngModel)]="entidad.razonSocial">
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label *ngIf="entidad.contribuyente">Contribuyente: {{entidad.contribuyente.id}}</mat-label>
+    <mat-select matInput [(ngModel)]="entidad.contribuyente">
+        <mat-option *ngFor="let c of contribuyente" [value]="c">
+            {{c.id}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Direccion</mat-label>
+    <textarea matInput placeholder="Direccion" [(ngModel)]="entidad.direccion"></textarea>
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Telefono</mat-label>
+    <input matInput placeholder="Telefono" [(ngModel)]="entidad.telefono">
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label *ngIf="entidad.estado">Estado: {{entidad.estado}}</mat-label>
+    <mat-select matInput [(ngModel)]="entidad.estado">
+        <mat-option value=0>0</mat-option>
+        <mat-option value=1>1</mat-option>
+    </mat-select>
+</mat-form-field>
+<button mat-button color="primary" (click)="aceptar()">   
+Aceptar
+</button>
+<button mat-button color="warn" (click)="cerrar()">
+Cancelar
+</button>

@@ -1,0 +1,21 @@
+<mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="Nombre" [(ngModel)]="contribuyente.nombre">
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label>Codigo</mat-label>
+    <input matInput placeholder="Codigo" [(ngModel)]="contribuyente.codigo">
+</mat-form-field>
+<mat-form-field appearance="fill">
+    <mat-label *ngIf="contribuyente.estado">Estado: {{contribuyente.estado}}</mat-label>
+    <mat-select matInput [(ngModel)]="contribuyente.estado">
+        <mat-option value=0>0</mat-option>
+        <mat-option value=1>1</mat-option>
+    </mat-select>
+</mat-form-field>
+<button mat-button color="primary" (click)="aceptar()">   
+Aceptar
+</button>
+<button mat-button color="warn" (click)="cerrar()">
+Cancelar
+</button>
